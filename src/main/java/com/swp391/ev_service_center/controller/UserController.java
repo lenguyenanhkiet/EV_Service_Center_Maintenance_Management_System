@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/admin/users")
-@PreAuthorize("hasRole('ADMIN')")
+//@PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;

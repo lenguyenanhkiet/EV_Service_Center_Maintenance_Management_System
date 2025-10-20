@@ -36,6 +36,9 @@ public class AuthServiceImpl implements AuthService {
         if(userRepository.findByEmail(requestDto.getEmail()).isPresent()){
             throw new EmailAlreadyExistsException("Email already exists.");
         }
+        if(userRepository.findByPhone(requestDto.getPhone()).isPresent()){
+            throw new EmailAlreadyExistsException("Phone already exists.");
+        }
         User newUser = new User();
         BeanUtils.copyProperties(requestDto, newUser);
         // Ma hoa password
